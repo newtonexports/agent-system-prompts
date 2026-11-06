@@ -1,0 +1,11 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "properties": {
+    "title": { "type": "string" },
+    "category": { "type": "string", "enum": ["coding", "scraping", "reasoning", "writing", "agent"] },
+    "author_github": { "type": "string" },
+    "prompt": { "type": "string", "minLength": 20 }
+  },
+  "required": ["title", "category", "author_github", "prompt"]
+}
