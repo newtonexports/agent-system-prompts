@@ -1,0 +1,17 @@
+name: Validate Contributions
+
+on:
+  pull_request:
+    paths:
+      - 'prompts/**'
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate PR Schema
+        uses: newtonexports/pr-schema-guard@v1.0.0
+        with:
+          schema-path: '.github/schema.json'
+          target-dir: 'prompts'
